@@ -6,3 +6,4 @@ venv/*
 .idea/*
 _old/*
 *.env
+node_modules/*
