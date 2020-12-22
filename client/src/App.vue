@@ -1,7 +1,7 @@
 <template>
     <div id="app">
       <router-view/>
-      <h1>APP</h1>
+
     </div>
 </template>
 
@@ -20,3 +20,4 @@ export default {
     },
 }
 </script>
+

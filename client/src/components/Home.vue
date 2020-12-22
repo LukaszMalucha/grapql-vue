@@ -1,15 +1,52 @@
 <template>
   <div class="home">
-  <h1> Home </h1>
+    <nav class="row navbar navbar-default top-navbar" role="navigation">
+      <div class="navbar-header">
+        <router-link class="navbar-brand" :to="{ name: 'home'}" >
+          <img src="https://septellar.s3-eu-west-1.amazonaws.com/img/septellar-md.png" alt="Logo"
+               class="img-logo"/>
+        </router-link>
+      </div>
+      <div class="col s10 m4 l5 plain-element center-align">
+        <div class="row searchbox-wrapper searchbox-long">
+          <form>
+            <input class="form-control" id="searchbox" type="text" placeholder="Image Search"
+                   aria-label="Search">
+            <button class="btn-transparent" type="submit"><i class="fas fa-search search-icon"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="col s4 m5 l5 plain-element">
+        <ul  class="nav navbar-top-links navbar-right">
+          <li v-for="item in horizontalNavItems"  :key="item.title">
+            <router-link  :to="{ name: 'home'}" class="nav-link">{{item.title}}</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
 
+  },
+  computed: {
+    horizontalNavItems() {
+      return [
+        {title: "Post", link: "/posts"},
+        {title: "Log In", link: "/login"},
+        {title: "Sign Up", link: "/signup"}
+      ]
+    }
   }
 }
 </script>
+
+<style>
+    @import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+    @import "https://use.fontawesome.com/releases/v5.4.2/css/all.css";
+</style>

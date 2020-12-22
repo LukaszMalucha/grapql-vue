@@ -1,0 +1,353 @@
+/*------------------------------------------------------------------------------
+    TOP NAVBAR
+------------------------------------------------------------------------------*/
+
+.navbar {
+	border-radius: 0px;
+}
+
+.navbar-header a {
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 40px;
+	margin-top: 0px;
+	font-weight: 400;
+	display: block;
+	color: #000;
+}
+
+.top-navbar {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 300;
+	border: none;
+	height: 40px;
+	min-height: 40px;
+	padding-left: 0.5%;
+	padding-right: 0%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+
+.top-navbar {
+	background-color: #fff;
+	border-bottom: 1px solid #C7C9C8;
+	box-shadow: none;
+}
+
+.navbar-brand .material-icons {
+	color: #1a2026;
+}
+
+
+/*------------------------------------------------------------------------------
+    LEFT-SIDE HEADER AREA
+------------------------------------------------------------------------------*/
+
+
+.top-navbar .navbar-brand {
+	margin: 0px;
+	height: 40px;
+	float: left;
+	text-align: left;
+	padding: 0px;
+	font-weight: 400;
+	color: #000;
+	background: transparent;
+	text-transform: uppercase;
+}
+
+.navbar-header {
+	width: 16%;
+	margin-left: 0px;
+	float: left;
+}
+
+.navbar-brand .material-icons,
+.navbar-brand .fab {
+	float: left;
+	font-size: 18px;
+	margin-right: 5px;
+	margin-top: -3px;
+	letter-spacing: 1px;
+	height: auto;
+	background: #0077b5;
+	padding: 3px 3px 3px 3px;
+	color: #000;
+	font-weight: normal;
+}
+
+.navbar-header:hover,
+.navbar-header:focus {
+	background: transparent;
+	color: #00539E;
+}
+
+
+.navbar-header a:hover {
+	text-decoration: none !important;
+}
+
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+	background-color: transparent;
+	outline: 0px;
+}
+
+.navbar-default .navbar-brand:hover {
+	color: #00539E;
+}
+
+.navbar-default .navbar-brand:hover .navbar-default .navbar-brand:focus {
+	color: #e5ebef;
+}
+
+.img-logo {
+	height: 24px;
+	margin: 8px 0px 0px 0px;
+	border-radius: 0%;
+}
+
+
+
+/*------------------------------------------------------------------------------
+   MIDDLE SEARCHBOX
+------------------------------------------------------------------------------*/
+
+nav form {
+    height:38px;
+    line-height: 38px;
+}
+
+.searchbox-wrapper {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+
+.btn-transparent {
+    position: absolute;
+    top: 1px;
+    right: -10px;
+    height: 100%;
+    color: #6d6d6e;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.btn-transparent i {
+  font-size: 20px;
+}
+
+.btn-transparent:hover,
+.btn-transparent:active,
+.btn-transparent:focus {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+
+#searchbox {
+    background-color: #ececec;
+    border: 1px solid rgba(188,188,183,0.50);
+    border-radius: 5px;
+    margin: auto;
+    padding: 4px 8px;
+    font-size: 14px;
+    height: 24px;
+    color: #202124;
+
+}
+
+#searchbox::placeholder {
+    color: #3c4146 !important;
+}
+
+
+nav i {
+  height: 40px;
+  line-height: 40px;
+}
+
+nav button {
+  line-height: 40px;
+}
+
+
+
+/*------------------------------------------------------------------------------
+    RIGHT SIDE LINKS
+------------------------------------------------------------------------------*/
+
+
+nav ul a {
+ font-size: 11px;
+ letter-spacing: 1px;
+ color: #000000;
+ text-transform: uppercase;
+ padding: 0px 0px 0px 20px;
+
+}
+
+.nav-link {
+	height: 100% !important;
+	margin: 0px 0px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.nav i,
+.nav i.material-icons {
+	height: 14px;
+	font-size: 14px;
+	margin-right: 6px;
+}
+
+
+
+.top-navbar .navbar-right {
+	width: auto;
+	height: 40px;
+	margin: 0px;
+	line-height: 1;
+	padding: 0px;
+	color: #000;
+	float: right !important;
+}
+
+.top-navbar .navbar-right>a {
+	padding: 0px;
+	letter-spacing: 1px;
+	font-size: 15px;
+}
+
+.top-navbar .navbar-right>a>i {
+	margin-right: 5px;
+	font-size: 16px;
+	height: 40px;
+}
+
+
+.navbar-right>a:hover,
+.navbar-right>a:focus {
+	text-decoration: none;
+	outline: 0px;
+}
+
+
+nav ul a:hover {
+	background-color: #fff;
+	color: #00539E;
+}
+
+nav ul li:hover,
+nav ul li:active {
+	background: transparent;
+	color: #00539E;
+}
+
+
+nav ul a:hover {
+	color: #00539E;
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus,
+.nav>li>a:active {
+	background-color: transparent;
+	color: #00539E;
+}
+
+.navbar-right>a:hover,
+.navbar-right>a:focus {
+	background: transparent;
+	color: #e5ebef;
+}
+
+
+.nav-button {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #000000;
+  text-transform: uppercase;
+  padding: 0px 0px 0px 20px;
+  height: 100% !important;
+	margin: 10px 0px;
+  background: none!important;
+  border: none;
+  cursor: pointer;
+}
+
+
+/*------------------------------------------------------------------------------
+    MEDIA QUERIES
+------------------------------------------------------------------------------*/
+
+@media(max-width:1700px) {
+	.top-navbar {
+		padding-left: 0.5%;
+		padding-right: 0.5%;
+	}
+	.navbar-header {
+		width: 30%;
+	}
+}
+
+@media(max-width:1400px) {
+	.top-navbar {}
+}
+
+@media(min-width:1026px) {
+	.sidenav-trigger {
+		display: none !important;
+	}
+}
+
+@media(max-width:1025px) {
+	.top-navbar {
+		padding-left: 0.5%;
+		padding-right: 0px;
+	}
+	.nav>li>a {
+		padding-right: 0px;
+	}
+	.nav-link {
+		display: none !important;
+	}
+	.navbar-header {
+		width: 60%;
+	}
+	nav a.sidenav-trigger i {
+		height: 40px;
+		line-height: 40px;
+	}
+	#trigger {
+		position: relative;
+	}
+	#search-form {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 601px) {
+	.top-navbar .navbar-brand {}
+	.navbar-header {
+		width: 45%;
+	}
+
+
+	.btn-transparent {
+    position: absolute;
+    top: 1px;
+    right: -16px;
+  }
+}
+
