@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="wrapper">
     <nav class="row navbar navbar-default top-navbar" role="navigation">
       <div class="navbar-header">
         <router-link class="navbar-brand" :to="{ name: 'home'}" >
@@ -17,13 +17,16 @@
         </div>
       </div>
       <div class="col s4 m5 l5 plain-element">
-        <ul  class="nav navbar-top-links navbar-right">
-          <li v-for="item in horizontalNavItems"  :key="item.title">
-            <router-link  :to="{ name: 'home'}" class="nav-link">{{item.title}}</router-link>
-          </li>
+        <ul class="nav navbar-top-links navbar-right">
+          <li><router-link  :to="{ name: 'posts'}" class="nav-link" href="">Posts</router-link></li>
+          <li><router-link  :to="{ name: 'login'}" class="nav-link" href="">Log In</router-link></li>
+          <li><router-link  :to="{ name: 'signup'}" class="nav-link" href="">Sign Up</router-link></li>
         </ul>
       </div>
     </nav>
+
+
+
   </div>
 </template>
 
@@ -35,13 +38,7 @@ export default {
 
   },
   computed: {
-    horizontalNavItems() {
-      return [
-        {title: "Post", link: "/posts"},
-        {title: "Log In", link: "/login"},
-        {title: "Sign Up", link: "/signup"}
-      ]
-    }
+
   }
 }
 </script>
