@@ -6,5 +6,5 @@ https://github.com/reedbarger/fullstack-vue-graphql-starter/blob/master/package.
 
 npm install
 
-vue add vuetify
+npm i apollo-boost vue-apollo
 

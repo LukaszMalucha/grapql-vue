@@ -25,18 +25,49 @@
       </div>
     </nav>
 
+    <div id="page-index">
+      <div class="row plain-element">
+        <div class="dashboard-cards">
+        <ul v-for="post in getPosts" :key="post._id">
+          <li>
+            {{post.title}}
+            {{post.imageUrl}}
+            {{post.description}}
 
+          </li>
+
+        </ul>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>
 
 <script>
+import { gql } from 'apollo-boost';
 
 export default {
   name: "Home",
   components: {
 
   },
+  apollo: {
+    getPosts: {
+      query: gql`
+        query {
+          getPosts {
+            _id
+            title
+            imageUrl
+            description
+
+          }
+        }
+      `
+    }
+  },
+
   computed: {
 
   }
