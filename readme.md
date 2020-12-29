@@ -1,8 +1,13 @@
 ## GraphQL + Vue.js
 
-### Links
-
+#### Package.json
 https://github.com/reedbarger/fullstack-vue-graphql-starter/blob/master/package.json
+
+#### Apollo Smart Query
+https://apollo.vuejs.org/api/smart-query.html
+
+
+#### NPM 
 
 npm install
 

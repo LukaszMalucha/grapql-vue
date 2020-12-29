@@ -28,15 +28,35 @@
     <div id="page-index">
       <div class="row plain-element">
         <div class="dashboard-cards">
-        <ul v-for="post in getPosts" :key="post._id">
-          <li>
-            {{post.title}}
-            {{post.imageUrl}}
-            {{post.description}}
+        <div v-if="$apollo.loading">Loading...</div>
+        <div v-else class="row plain-element">
 
-          </li>
+          <ul v-for="post in getPosts" :key="post._id">
+            <li>
+              {{post.title}}
+              {{post.imageUrl}}
+              {{post.description}}
 
-        </ul>
+            </li>
+
+          </ul>
+          </div>
+           <ApolloQuery :query="getPostsQuery">
+           <template slot-scope="{ result: { loading, error, networkStatus, data  }}">
+            <div v-if="loading">Loading...</div>
+            <div v-else-if="error"> Error! {{ error.message }} </div>
+            <div v-else-if="!loading"> NetworkStatus {{ networkStatus }} </div>
+            <ul v-else v-for="post in data.getPosts" :key="post._id">
+              <li>
+                {{post.title}}
+                {{post.imageUrl}}
+                {{post.description}}
+              </li>
+            </ul>
+           </template>
+
+
+        </ApolloQuery>
         </div>
       </div>
     </div>
@@ -52,6 +72,28 @@ export default {
   components: {
 
   },
+  data() {
+    return {
+      getPostsQuery: gql`
+        query {
+          getPosts {
+            _id
+            title
+            imageUrl
+            description
+
+          }
+        }
+      `,
+      result( args ) {
+          window.console.dir(args);
+      },
+      error(err) {
+        window.console.log("[ERROR!!]", err);
+        window.console.dir(err);
+      }
+    }
+  },
   apollo: {
     getPosts: {
       query: gql`
@@ -64,7 +106,14 @@ export default {
 
           }
         }
-      `
+      `,
+      result( args ) {
+          window.console.dir(args);
+      },
+      error(err) {
+        window.console.log("[ERROR!!]", err);
+        window.console.dir(err);
+      }
     }
   },
 
