@@ -10,6 +10,11 @@ https://apollo.vuejs.org/api/smart-query.html
 #### NPM 
 
 npm install
+npm install -save vuex
 
+#### Apollo Client
 npm i apollo-boost vue-apollo
+
+#### Carousel
+npm i -S vue-easy-slider
 

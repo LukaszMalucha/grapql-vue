@@ -32,7 +32,6 @@
 
 
           </div>
-
           <router-view/>
 
 
@@ -52,6 +51,7 @@ export default {
     name: "App",
     components: {
     },
+
     methods: {
 
     },

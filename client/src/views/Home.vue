@@ -28,35 +28,12 @@
     <div id="page-index">
       <div class="row plain-element">
         <div class="dashboard-cards">
-        <div v-if="$apollo.loading">Loading...</div>
-        <div v-else class="row plain-element">
 
-          <ul v-for="post in getPosts" :key="post._id">
-            <li>
-              {{post.title}}
-              {{post.imageUrl}}
-              {{post.description}}
+        <div class="row row-cards">
 
-            </li>
 
-          </ul>
           </div>
-           <ApolloQuery :query="getPostsQuery">
-           <template slot-scope="{ result: { loading, error, networkStatus, data  }}">
-            <div v-if="loading">Loading...</div>
-            <div v-else-if="error"> Error! {{ error.message }} </div>
-            <div v-else-if="!loading"> NetworkStatus {{ networkStatus }} </div>
-            <ul v-else v-for="post in data.getPosts" :key="post._id">
-              <li>
-                {{post.title}}
-                {{post.imageUrl}}
-                {{post.description}}
-              </li>
-            </ul>
-           </template>
 
-
-        </ApolloQuery>
         </div>
       </div>
     </div>
@@ -65,60 +42,30 @@
 </template>
 
 <script>
-import { gql } from 'apollo-boost';
+import { mapGetters, mapActions } from 'vuex';
+
 
 export default {
   name: "Home",
   components: {
 
   },
-  data() {
-    return {
-      getPostsQuery: gql`
-        query {
-          getPosts {
-            _id
-            title
-            imageUrl
-            description
 
-          }
-        }
-      `,
-      result( args ) {
-          window.console.dir(args);
-      },
-      error(err) {
-        window.console.log("[ERROR!!]", err);
-        window.console.dir(err);
-      }
-    }
-  },
-  apollo: {
-    getPosts: {
-      query: gql`
-        query {
-          getPosts {
-            _id
-            title
-            imageUrl
-            description
+  methods: {
+    ...mapGetters([ "getMessage"]),
+    ...mapActions(['getPosts']),
+    handleGetCarouselPosts() {
 
-          }
-        }
-      `,
-      result( args ) {
-          window.console.dir(args);
-      },
-      error(err) {
-        window.console.log("[ERROR!!]", err);
-        window.console.dir(err);
-      }
     }
+
   },
+
 
   computed: {
 
+  },
+  created() {
+    this.getPosts();
   }
 }
 </script>
@@ -126,4 +73,5 @@ export default {
 <style>
     @import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
     @import "https://use.fontawesome.com/releases/v5.4.2/css/all.css";
+
 </style>

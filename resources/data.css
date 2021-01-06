@@ -8,7 +8,7 @@
     box-shadow: none;
     display: block;
     overflow: auto;
-    width: 100%;
+    width: 80%;
     margin: auto;
     margin-top: 50px;
     min-height: 600px;
@@ -56,6 +56,34 @@ table {
 #rowTransactionReceipt {
   display: none;
 }
+
+/*------------------------------------------------------------------------------
+    SLIDER
+------------------------------------------------------------------------------*/
+
+.slider {
+  width: 50% !important;
+  margin: auto;
+}
+
+.slider-title {
+  position: absolute;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px 5px 0 0;
+  padding: 0.5em;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.slider .img {
+  width: 100%;
+}
+
 
 /*------------------------------------------------------------------------------
     FORM CARDS
