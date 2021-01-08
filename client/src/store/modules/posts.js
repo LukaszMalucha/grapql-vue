@@ -36,8 +36,6 @@ const actions = {
         commit("setLoading", false);
         window.console.log(err)
       });
-    commit("setMessage", "XXX")
-
   }
 
 };

@@ -10,6 +10,12 @@
           <div class="row text-center row-form">
             <div class="row plain-element">
               <div class="input-field col s12">
+                <input type="text" name="username" id="id_usernamer" v-model="username" required>
+                <label class="" for="id_email">Username</label>
+              </div>
+            </div>
+            <div class="row plain-element">
+              <div class="input-field col s12">
                 <input type="text" name="email" id="id_email" v-model="email" required>
                 <label class="" for="id_email">Email</label>
               </div>
@@ -43,7 +49,21 @@
 <script>
 
 export default {
-  name: "SignupView"
+  name: "RegisterView",
+  data() {
+    return {
+      username: "",
+      email: "",
+      password: "",
+
+
+    };
+
+  },
+  methods: {
+
+  }
+
 
 }
 

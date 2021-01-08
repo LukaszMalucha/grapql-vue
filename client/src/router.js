@@ -2,9 +2,12 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import LoginView from "./views/LoginView.vue";
-import SignupView from "./views/SignupView.vue";
+import RegisterView from "./views/RegisterView.vue";
 import AddPost from "./views/AddPost.vue";
 import Posts from "./views/Posts.vue";
+import Profile from "./views/Profile.vue";
+
+import AuthGuard from "./AuthGuard";
 
 Vue.use(Router)
 
@@ -19,7 +22,7 @@ export default new Router({
     {
       path: "/signup",
       name: "signup",
-      component: SignupView
+      component: RegisterView
     },
     {
       path: "/login",
@@ -35,6 +38,12 @@ export default new Router({
       path: "/posts",
       name: "posts",
       component: Posts
+    },
+    {
+      path: "/profile",
+      name: "profile",
+      component: Profile,
+      beforeEnter: AuthGuard
     },
   ]
 })

@@ -21,10 +21,14 @@
                 </div>
               </div>
               <div class="col s4 m5 l5 plain-element">
-                <ul class="nav navbar-top-links navbar-right">
-                  <li><router-link  :to="{ name: 'home'}" class="nav-link" href="">Posts</router-link></li>
+                <ul v-if="getUser" class="nav navbar-top-links navbar-right">
+                  <li><router-link  :to="{ name: 'posts'}" class="nav-link" href="">Posts</router-link></li>
+                  <li><a @click="handleLogoutUser" class="nav-link" href="">Logout</a></li>
+                </ul>
+                <ul v-else class="nav navbar-top-links navbar-right">
                   <li><router-link  :to="{ name: 'login'}" class="nav-link" href="">Log In</router-link></li>
                   <li><router-link  :to="{ name: 'signup'}" class="nav-link" href="">Sign Up</router-link></li>
+
                 </ul>
               </div>
             </nav>
@@ -45,7 +49,7 @@
 </template>
 
 <script>
-
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: "App",
@@ -53,11 +57,21 @@ export default {
     },
 
     methods: {
-
+      ...mapActions(['logoutUser']),
+      handleLogoutUser() {
+        this.logoutUser()
+      }
     },
     computed: {
+      ...mapGetters(['getUser']),
 
     },
 }
 </script>
 
+
+<style>
+    @import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+    @import "https://use.fontawesome.com/releases/v5.4.2/css/all.css";
+
+</style>
